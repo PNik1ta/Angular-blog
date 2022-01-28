@@ -6,16 +6,20 @@ import { NgModule } from "@angular/core";
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { CreatePageComponent } from './create-page/create-page.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AdminLayoutComponent,
     DashboardPageComponent,
     CreatePageComponent,
-    EditPageComponent
+    EditPageComponent,
+    LoginPageComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild([
       {
         path: '', component: AdminLayoutComponent, children: [
@@ -28,7 +32,7 @@ import { EditPageComponent } from './edit-page/edit-page.component';
       }
     ])
   ],
-  exports: [RouterModule]
+  exports: [RouterModule, ReactiveFormsModule]
 })
 export class AdminModule {
 
