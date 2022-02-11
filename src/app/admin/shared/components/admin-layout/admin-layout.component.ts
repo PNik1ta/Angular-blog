@@ -1,6 +1,6 @@
-import { AuthService } from './../../services/auth.service';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-admin-layout',
@@ -9,16 +9,18 @@ import { Router } from '@angular/router';
 })
 export class AdminLayoutComponent implements OnInit {
 
-  constructor(private router: Router,
-    public auth: AuthService) { }
-
-  ngOnInit(): void {
+  constructor(
+    private router: Router,
+    public auth: AuthService
+  ) {
   }
 
-  logout(event: Event): void {
+  ngOnInit() {
+  }
+
+  logout(event: Event) {
     event.preventDefault();
     this.auth.logout();
     this.router.navigate(['/admin', 'login']);
-    console.log(this.auth.isAuthenticated());
   }
 }

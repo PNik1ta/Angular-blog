@@ -1,11 +1,13 @@
-import { Environment } from './interface';
 // This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { Environment } from './interface';
+
 export const environment: Environment = {
-  production: false,
-  apiKey: 'AIzaSyA9cHR6l-igKglED594uUji1UHhcSt2TWA'
+	production: false,
+	apiKey: 'AIzaSyA9cHR6l-igKglED594uUji1UHhcSt2TWA',
+	fbDbUrl: 'https://angular-blog-89bcf-default-rtdb.firebaseio.com'
 };
 
 /*
@@ -15,4 +17,4 @@ export const environment: Environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
